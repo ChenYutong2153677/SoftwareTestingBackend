@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json
 import os
 from flask import Flask, make_response, request, redirect, url_for, send_from_directory

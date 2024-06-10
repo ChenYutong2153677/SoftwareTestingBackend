@@ -1,6 +1,6 @@
 class Triangle:
     def isornot(self,a,b,c):
-        if 0 < a <= 800 and 0 < b <= 800 and 0 < c <= 800 and a + c > b and a + b > c and c + b > a:
+        if 0 < a <= 100 and 0 < b <= 100 and 0 < c <= 100 and a + c > b and a + b > c and c + b > a:
             return "是"
         else:
             return "否"
@@ -18,11 +18,11 @@ class Triangle:
             return "第二条边不能小于0"
         if c < 0:
             return "第三条边不能小于0"
-        if a > 800:
+        if a > 100:
             return "第一条边超出了边界"
-        if b > 800:
+        if b > 100:
             return "第二条边超出了边界"
-        if c > 800:
+        if c > 100:
             return "第三条边超出了边界"
         if a + c > b and a + b > c and c + b > a:
             if a == b == c:
