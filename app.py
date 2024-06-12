@@ -7,6 +7,7 @@ import charges.charges as charges
 import computer.computer as computer
 import triangle.triangle as triangle
 import thecalendar.thecalendar as thecalendar
+import sale.sale as sale
 from flask_cors import CORS
 
 
@@ -89,6 +90,26 @@ def question4():
     df[6] = 0
     for i in range(df.shape[0]):
         df.loc[i, 5] = thecalendar.calendar_atom([df[1][i], df[2][i], df[3][i]])
+        if str(df[4][i]) != str(df[5][i]):
+            df.loc[i, 6] = "未通过测试"
+        else:
+            df.loc[i, 6] = "通过测试"
+
+    da = json.dumps(df.to_dict(orient='records'))
+
+    response = make_response(da)
+
+    return response
+
+@app.route('/sale', methods=['POST', 'GET'])
+def question5():
+    file = request.files['file']
+    file.save(os.getcwd() + '/' + file.filename)
+    df = pd.read_csv(file.filename, sep=',', header=None)
+    df[5] = 0
+    df[6] = 0
+    for i in range(df.shape[0]):
+        df.loc[i, 5] = sale.compute(df[1][i], df[2][i], df[3][i])
         if str(df[4][i]) != str(df[5][i]):
             df.loc[i, 6] = "未通过测试"
         else:

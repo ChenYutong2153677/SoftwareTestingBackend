@@ -1,13 +1,13 @@
 class SaleSystem:
     zj_price = 25  # 主机价格
-
     zj_max = 70  # 主机每月最大销售量
+
     xsq_price = 30  # 显示器价格
-
     xsq_max = 80  # 显示器每月最大销售量
-    ws_price = 45  # 外设价格
 
+    ws_price = 45  # 外设价格
     ws_max = 90  # 外设每月最大销售量
+
     min_num = 1  # 部件最小销售量
 
     zj_num = 0  # 主机销量
@@ -83,4 +83,5 @@ def compute(num1, num2, num3):
 
 
 if __name__ == '__main__':
+    saleSystem = SaleSystem()  # 实例化销售系统
     compute()
