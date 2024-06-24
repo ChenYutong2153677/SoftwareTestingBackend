@@ -12,9 +12,9 @@ class ChargeSystem:
             return False
         if self.missed_payments < 0:
             return False
-        if self.phone_time > 44640:
+        if self.phone_time > 20000:
             return False
-        if self.missed_payments > 11:
+        if self.missed_payments > 20:
             return False
         return True
 
@@ -23,9 +23,9 @@ class ChargeSystem:
             return "通话分钟数不能小于0"
         if self.missed_payments < 0:
             return "不按时缴费次数不能小于0"
-        if self.phone_time > 44640:
+        if self.phone_time > 20000:
             return "通话分钟数超出了限制"
-        if self.missed_payments > 11:
+        if self.missed_payments > 20:
             return "不按时缴费次数超出了限制"
 
     def calculatedFee(self):
